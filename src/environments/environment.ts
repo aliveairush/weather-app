@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+  // openweathermap
+  WEATHER_URL: 'https://api.openweathermap.org/data/2.5/weather',
+  WEATHER_API_KEY: 'put your api key here',
 };
 
 /*
