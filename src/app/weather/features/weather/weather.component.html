@@ -25,6 +25,7 @@
     <div class="mat-h2">Прошлые поиски:</div>
     <app-weather-list
       [weatherData]="(weatherService.savedWeather$ | async)!"
+      class="saved-weather-data__list"
     ></app-weather-list>
   </div>
 </main>

@@ -17,7 +17,9 @@ export class WeatherService {
   public savedWeather = new Array<WeatherData>();
   public savedWeather$: BehaviorSubject<WeatherData[]> = new BehaviorSubject<WeatherData[]>(this.initDataFromLocalStorage()); 
 
-  constructor(private http: HttpClient, private localStorage: LocalStorageService) {}
+  constructor(private http: HttpClient, private localStorage: LocalStorageService) {
+    this.savedWeather = this.initDataFromLocalStorage();
+  }
 
   public initDataFromLocalStorage(): WeatherData[] {
     let savedData = this.localStorage.getItem(this.WEATHER_TOKEN);

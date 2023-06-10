@@ -1,4 +1,20 @@
-<p>weather-list works!</p>
-<ul>
-  <li *ngFor="let data of weatherData">{{ data.city }}</li>
-</ul>
+<cdk-virtual-scroll-viewport
+  appendOnly
+  itemSize="3"
+  class="weather-list-viewport"
+>
+  <div *cdkVirtualFor="let item of weatherData" class="example-item">
+    <mat-card class="weather-card">
+      <mat-card-title-group>
+        <mat-card-title>{{ item.city }}</mat-card-title>
+        <mat-card-subtitle>TODO DATE</mat-card-subtitle>
+      </mat-card-title-group>
+      <mat-card-content>
+        <span> humidity: {{ item.humidity }}</span>
+        <span>temp: {{ item.temp }}</span>
+        <span>temp_max: {{ item.temp_max }}</span>
+        <span>temp_min: {{ item.temp_min }}</span>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</cdk-virtual-scroll-viewport>
