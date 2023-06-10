@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import WeatherData from 'src/app/weather/data-access/types/weather-data.type';
 
 @Injectable({
   providedIn: 'root',

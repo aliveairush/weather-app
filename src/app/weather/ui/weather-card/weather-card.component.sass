@@ -1,0 +1,43 @@
+.weather-card 
+    width: 500px
+    height: 300px
+    padding: 0
+    
+.image-container
+    position: relative
+    overflow: hidden
+    width: 500px
+    height: 200px
+    
+.image-container img
+    position: absolute
+    object-fit: cover
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    margin: 0
+
+.city-weater
+    position: relative
+    z-index: 1
+    width: 100%
+    height: 90%
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+
+    &__city
+        color: white
+        font-size: 32px
+        padding: 28px
+    
+    &__temp
+        color: white
+        font-size: 48px
+        font-weight: 700
+
+.weather-other-data
+    padding-left: 16px
+    padding-top: 16px
