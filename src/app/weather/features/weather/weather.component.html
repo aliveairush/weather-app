@@ -18,7 +18,13 @@
   </div>
 
   <div>
-    <app-weather-card [data]="weatherData$ | async"></app-weather-card>
+    <app-weather-card
+      *ngIf="weatherData"
+      [data]="weatherData"
+    ></app-weather-card>
+    <ng-container *ngIf="hasWeatherDataError && !weatherDataLoading">
+      <h1>There is no such city as "{{ cityName.value }}"</h1>
+    </ng-container>
   </div>
 
   <div class="saved-weather-data">

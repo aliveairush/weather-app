@@ -1,5 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import WeatherData from '../../data-access/types/weather-data.type';
@@ -10,6 +15,7 @@ import WeatherData from '../../data-access/types/weather-data.type';
   imports: [CommonModule, MatButtonModule, MatCardModule],
   templateUrl: './weather-card.component.html',
   styleUrls: ['./weather-card.component.sass'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WeatherCardComponent implements OnInit {
   constructor() {}
