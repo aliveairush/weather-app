@@ -14,11 +14,11 @@ export class WeatherService {
   private readonly WEATHER_URL = environment.WEATHER_URL;
   private readonly WEATHER_API = environment.WEATHER_API_KEY;
 
-  public savedWeather = new Array<WeatherData>();
-  public savedWeather$: BehaviorSubject<WeatherData[]> = new BehaviorSubject<WeatherData[]>(this.initDataFromLocalStorage()); 
+  #savedWeather = new Array<WeatherData>();
+  savedWeather$: BehaviorSubject<WeatherData[]> = new BehaviorSubject<WeatherData[]>(this.initDataFromLocalStorage()); 
 
   constructor(private http: HttpClient, private localStorage: LocalStorageService) {
-    this.savedWeather = this.initDataFromLocalStorage();
+    this.#savedWeather = this.initDataFromLocalStorage();
   }
 
   public initDataFromLocalStorage(): WeatherData[] {
@@ -56,8 +56,8 @@ export class WeatherService {
         }
       }),
       tap((data: WeatherData) => {
-        this.savedWeather.push(data)
-        this.savedWeather$.next(this.savedWeather);
+        this.#savedWeather = [data, ...this.#savedWeather]
+        this.savedWeather$.next(this.#savedWeather);
         this.saveWeatherDataToLocalStorage(data);
       })
     )
