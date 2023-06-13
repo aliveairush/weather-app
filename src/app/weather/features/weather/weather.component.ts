@@ -69,4 +69,8 @@ export class WeatherComponent {
   onSelectPrevWeather(weather: WeatherData) {
     this.weatherData = weather;
   }
+
+  onClearPrevData() {
+    this.weatherService.clearSavedWeatherData();
+  }
 }

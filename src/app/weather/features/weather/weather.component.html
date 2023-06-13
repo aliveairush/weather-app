@@ -29,6 +29,11 @@
 
   <div class="saved-weather-data">
     <div class="mat-h2">Прошлые поиски:</div>
+    <div class="saved-weather-data__actions">
+      <button (click)="onClearPrevData()" mat-stroked-button color="primary">
+        Clear all
+      </button>
+    </div>
     <app-weather-list
       [weatherData]="(weatherService.savedWeather$ | async)!"
       (cardClick)="onSelectPrevWeather($event)"

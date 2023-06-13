@@ -80,4 +80,10 @@ export class WeatherService {
 
     this.localStorage.setItem(this.WEATHER_TOKEN, JSON.stringify(newData));
   }
+
+  public clearSavedWeatherData() {
+    this.localStorage.clearStorage();
+    this.#savedWeather = [];
+    this.savedWeather$.next(this.#savedWeather);
+  }
 }
