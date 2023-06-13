@@ -1,4 +1,4 @@
-<mat-card *ngIf="data" class="weather-card">
+<mat-card *ngIf="dataProp" class="weather-card">
   <div class="image-container">
     <img
       mat-card-image
@@ -6,14 +6,16 @@
       alt="Photo of a Shiba Inu"
     />
     <div class="city-weater">
-      <div class="city-weater__city">{{ data.city }}</div>
-      <div class="city-weater__temp">{{ data.temp | number : "1.0-0" }}°C</div>
+      <div class="city-weater__city">{{ dataProp.city }}</div>
+      <div class="city-weater__temp">
+        {{ dataProp.temp | number : "1.0-0" }}°C
+      </div>
     </div>
   </div>
 
   <mat-card-content class="weather-other-data">
-    <div>Max temp: {{ data.temp_max }}</div>
-    <div>Min temp: {{ data.temp_min }}</div>
-    <div>Humidity: {{ data.humidity }}</div>
+    <div>Max temp: {{ dataProp.temp_max }}</div>
+    <div>Min temp: {{ dataProp.temp_min }}</div>
+    <div>Humidity: {{ dataProp.humidity }}</div>
   </mat-card-content>
 </mat-card>

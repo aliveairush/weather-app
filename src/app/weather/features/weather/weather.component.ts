@@ -65,4 +65,8 @@ export class WeatherComponent {
         },
       });
   }
+
+  onSelectPrevWeather(weather: WeatherData) {
+    this.weatherData = weather;
+  }
 }

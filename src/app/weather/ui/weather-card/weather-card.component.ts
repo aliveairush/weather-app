@@ -20,8 +20,8 @@ import WeatherData from '../../data-access/types/weather-data.type';
 export class WeatherCardComponent implements OnInit {
   constructor() {}
 
-  @Input()
-  data: WeatherData | null = null;
+  @Input('data')
+  dataProp: WeatherData | null = null;
 
   ngOnInit(): void {}
 }

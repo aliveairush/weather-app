@@ -3,8 +3,11 @@
   itemSize="3"
   class="weather-list-viewport"
 >
-  <div *cdkVirtualFor="let item of weatherData" class="example-item">
-    <mat-card class="weather-card">
+  <div *cdkVirtualFor="let item of weatherDataProp" class="example-item">
+    <mat-card
+      (click)="cardClickEvent.emit(item)"
+      class="weather-card clickable"
+    >
       <mat-card-title-group>
         <mat-card-title>{{ item.city }}</mat-card-title>
         <!-- <mat-card-subtitle>TODO DATE</mat-card-subtitle> -->

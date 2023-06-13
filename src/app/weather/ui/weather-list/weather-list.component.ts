@@ -1,6 +1,12 @@
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import WeatherData from '../../data-access/types/weather-data.type';
 
@@ -13,6 +19,9 @@ import WeatherData from '../../data-access/types/weather-data.type';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class WeatherListComponent {
-  @Input()
-  weatherData: WeatherData[] = [];
+  @Input('weatherData')
+  weatherDataProp: WeatherData[] = [];
+
+  @Output('cardClick') cardClickEvent: EventEmitter<WeatherData> =
+    new EventEmitter<WeatherData>();
 }

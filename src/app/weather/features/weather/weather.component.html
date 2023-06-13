@@ -31,6 +31,7 @@
     <div class="mat-h2">Прошлые поиски:</div>
     <app-weather-list
       [weatherData]="(weatherService.savedWeather$ | async)!"
+      (cardClick)="onSelectPrevWeather($event)"
       class="saved-weather-data__list"
     ></app-weather-list>
   </div>
